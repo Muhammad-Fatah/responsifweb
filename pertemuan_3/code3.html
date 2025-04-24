@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 3</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        .message {
+            padding: 20px;
+            font-size: 24px;
+            background-color: #ffcc00;
+            margin: 10px;
+        }
+        
+   
+        .landscape-message {
+            display: none;
+        }
+        
+        
+        @media only screen and (orientation: portrait) {
+            body {
+                background-color: #ffe6cc;
+            }
+            .portrait-message {
+                display: block;
+            }
+            .landscape-message {
+                display: none;
+            }
+        }
+        
+        
+        @media only screen and (orientation: landscape) {
+            body {
+                background-color: #cce6ff;
+            }
+            .portrait-message {
+                display: none;
+            }
+            .landscape-message {
+                display: block;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 500px) {
+            .message {
+                display: none;
+            }
+            body::after {
+                content: "Ukuran Layar terlalu kecil";
+                font-size: 18px;
+                color: red;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div class="message portrait-message">Anda dalam mode portrait</div>
+    <div class="message landscape-message">Sekarang ada dalam landscape mode</div>
+</body>
+</html>
